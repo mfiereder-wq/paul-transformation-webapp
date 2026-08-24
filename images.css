@@ -1,0 +1,59 @@
+.program-image {
+  display: block;
+  width: calc(100% + 60px);
+  height: 190px;
+  margin: -30px -30px 28px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pillars .image-pillar {
+  position: relative;
+  min-height: 335px;
+  padding: 0;
+  overflow: hidden;
+  color: #f4eee3;
+}
+
+.pillars .image-pillar > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pillars .image-pillar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(34, 19, 14, 0.08), rgba(44, 7, 11, 0.88));
+}
+
+.pillars .image-pillar > div {
+  position: absolute;
+  z-index: 1;
+  right: 28px;
+  bottom: 25px;
+  left: 28px;
+}
+
+.pillars .image-pillar h3 {
+  margin: 12px 0;
+  color: #fff;
+}
+
+.pillars .image-pillar p {
+  margin: 0;
+  color: #f7eee2;
+}
+
+@media (max-width: 760px) {
+  .program-image {
+    height: 220px;
+  }
+
+  .pillars .image-pillar {
+    min-height: 290px;
+  }
+}

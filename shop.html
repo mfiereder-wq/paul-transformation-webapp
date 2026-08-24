@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PCT Shop — Pläne für deine Transformation</title>
+<meta name="description" content="Entdecke die digitalen PCT Pläne: der individuelle Ernährungsplan und der 7-Days Renewal Detox Plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#000000;
+    --ink-soft:#3e4144;
+    --paper:#f8f8f7;
+    --paper-deep:#e6e6e4;
+    --gold:#b89567;
+    --gold-dark:#8a5a2f;
+    --blue:#61738e;
+    --blue-deep:#2a4059;
+    --sun:#b89567;
+    --gold-text:#8a5a2f;
+    --white:#ffffff;
+    --line:rgba(0,0,0,.2);
+    --line-light:rgba(0,0,0,.18);
+    --display:'Barlow Condensed',Impact,sans-serif;
+    --body:'Manrope',Arial,sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+    --radius:3px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  body.menu-open{overflow:hidden;}
+  a{color:inherit;}
+  button{font:inherit;}
+  h1,h2,h3,p{margin:0;}
+  h1,h2,h3{font-family:var(--display);text-transform:uppercase;letter-spacing:.025em;line-height:.94;font-weight:800;}
+  h1{font-size:clamp(4.8rem,13vw,11rem);}
+  h2{font-size:clamp(3.2rem,7vw,7rem);}
+  h3{font-size:clamp(2.4rem,4.5vw,4rem);}
+  .container{width:min(1180px,100% - 48px);margin:0 auto;}
+  .mono-label{font-family:var(--mono);font-size:.67rem;line-height:1.35;letter-spacing:.12em;text-transform:uppercase;font-weight:600;}
+  .eyebrow{color:var(--gold);}
+  .sr-skip{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .sr-skip:focus{width:auto;height:auto;margin:0;clip:auto;top:12px;left:12px;z-index:100;padding:12px 16px;background:var(--sun);color:var(--ink);}
+  :focus-visible{outline:3px solid var(--sun);outline-offset:4px;}
+  ::selection{background:var(--gold);color:var(--ink);}
+  .btn,button,nav.links a{cursor:pointer;touch-action:manipulation;}
+  .menu-toggle{min-width:48px;min-height:48px;}
+  .scroll-progress{position:absolute;left:0;right:0;bottom:-2px;height:3px;background:transparent;pointer-events:none;z-index:3;}
+  .scroll-progress span{display:block;width:100%;height:100%;background:var(--gold);transform:scaleX(0);transform-origin:left center;will-change:transform;}
+  html.js-enabled .scroll-reveal{opacity:0;transform:translateY(30px);filter:blur(4px);clip-path:inset(0 0 8% 0);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1),filter .8s ease,clip-path .8s ease;}
+  html.js-enabled .scroll-reveal.is-visible{opacity:1;transform:none;filter:none;clip-path:inset(0 0 0 0);}
+  html.js-enabled .scroll-stagger > *{opacity:0;transform:translateY(24px) scale(.985);transition:opacity .65s ease,transform .65s cubic-bezier(.22,1,.36,1);}
+  html.js-enabled .scroll-stagger.is-visible > *{opacity:1;transform:none;}
+  html.js-enabled .scroll-stagger > *:nth-child(1){transition-delay:.06s;}
+  html.js-enabled .scroll-stagger > *:nth-child(2){transition-delay:.14s;}
+  @media(prefers-reduced-motion:reduce){html.js-enabled .scroll-reveal,html.js-enabled .scroll-stagger > *{opacity:1;transform:none;filter:none;clip-path:none;transition:none;}}
+
+  header{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--paper);border-bottom:1px solid var(--line-light);}
+  .site-links{display:none;}
+  .nav-inner{width:min(1280px,100% - 48px);margin:0 auto;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:32px;}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:max-content;}
+  .brand img{width:58px;height:52px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);}
+  .brand-name{font-family:var(--display);font-size:1.45rem;line-height:.8;letter-spacing:.05em;}
+  .brand-name span{display:block;color:var(--sun);font-family:var(--mono);font-size:.48rem;letter-spacing:.16em;margin-top:7px;}
+  nav.links{display:flex;align-items:center;gap:28px;}
+  nav.links a,.nav-cta{font-family:var(--mono);font-size:.68rem;line-height:1;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;}
+  nav.links a{color:#c5cbc7;transition:color .18s ease;}
+  nav.links a:hover,nav.links a[aria-current="page"]{color:var(--sun);}
+  .nav-cta{padding:14px 18px;background:var(--gold);color:var(--ink);border-radius:var(--radius);font-weight:600;transition:background .18s ease,transform .18s ease;}
+  .nav-cta:hover{background:var(--sun);transform:translateY(-2px);}
+  .menu-toggle{display:none;border:0;background:transparent;color:var(--paper);font-size:1.7rem;cursor:pointer;padding:8px;}
+  @media(max-width:900px){
+    .menu-toggle{display:block;position:relative;z-index:2;}
+    nav.links{display:none;position:fixed;inset:76px 0 0;background:var(--ink);padding:44px 24px;flex-direction:column;align-items:flex-start;gap:28px;}
+    nav.links.is-open{display:flex;}
+    nav.links a{font-family:var(--display);font-size:3rem;letter-spacing:.02em;color:var(--paper);}
+    .nav-cta{display:none;}
+  }
+
+  .shop-hero{background:var(--ink);color:var(--paper);overflow:hidden;}
+  .shop-hero-top{border-bottom:1px solid var(--line-light);padding:13px 0;color:#aeb8b2;display:flex;justify-content:space-between;gap:20px;}
+  .shop-hero-top span:last-child{color:var(--sun);}
+  .shop-hero-inner{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(240px,.85fr);gap:50px;align-items:end;padding:clamp(70px,10vw,135px) 0 92px;}
+  .shop-hero h1{color:var(--paper);}
+  .shop-hero h1 em{font-style:normal;color:var(--gold);}
+  .shop-hero-copy{max-width:620px;margin-top:30px;color:#c5cbc7;font-size:1.1rem;}
+  .shop-note{max-width:310px;border-left:3px solid var(--gold);padding:18px 0 18px 22px;color:#c5cbc7;}
+  .shop-note strong{display:block;color:var(--sun);font-family:var(--display);font-size:2.3rem;line-height:.9;margin-bottom:15px;}
+  .shop-rail{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line-light);border-bottom:1px solid var(--line-light);}
+  .shop-rail span{padding:14px 10px;color:#89958f;border-right:1px solid var(--line-light);font-family:var(--mono);font-size:.61rem;text-transform:uppercase;letter-spacing:.08em;}
+  .shop-rail span:last-child{border-right:0;}
+  .shop-rail strong{color:var(--gold);font-weight:500;}
+  @media(max-width:760px){.shop-hero-inner{grid-template-columns:1fr;padding-bottom:60px}.shop-note{max-width:480px}.shop-rail span{font-size:.53rem;padding-left:5px;padding-right:5px;}}
+  @media(max-width:560px){.container,.nav-inner{width:min(100% - 32px,1180px)}.shop-hero h1{font-size:clamp(4.2rem,19vw,6rem)}.shop-hero-top{font-size:.56rem;}}
+
+  .products{padding:clamp(76px,10vw,135px) 0;background:var(--paper);}
+  .section-intro{max-width:750px;}
+  .section-intro h2{margin-top:14px;}
+  .section-intro p:not(.mono-label){max-width:640px;margin-top:24px;color:var(--ink-soft);font-size:1.08rem;}
+  .product-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:70px;}
+  .product-card{background:var(--white);border:1px solid var(--ink);display:flex;flex-direction:column;min-height:640px;overflow:hidden;}
+  .product-card:nth-child(2){background:var(--blue);color:var(--white);border-color:var(--blue);transform:translateY(22px);}
+  .product-visual{height:250px;background:var(--ink);position:relative;overflow:hidden;padding:27px;display:flex;align-items:end;}
+  .product-card:nth-child(2) .product-visual{background:var(--gold);}
+  .product-visual > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.92;filter:saturate(.95) contrast(1.04);transition:transform .4s ease;}
+  .product-card:first-child .product-visual > img{object-position:center 34%;}
+  .product-card:hover .product-visual > img{transform:scale(1.04);}
+  .product-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,13,13,.72),rgba(11,13,13,.04) 72%);pointer-events:none;}
+  .product-card:nth-child(2) .product-visual::after{background:linear-gradient(0deg,rgba(11,13,13,.62),rgba(11,13,13,.03) 72%);}
+  .product-visual::before{content:'PCT';position:absolute;z-index:1;right:-15px;top:-52px;font-family:var(--display);font-size:14rem;line-height:1;color:var(--paper);opacity:.1;}
+  .product-card:nth-child(2) .product-visual::before{color:var(--ink);opacity:.18;}
+  .product-visual-label{position:relative;z-index:2;color:var(--sun);font-family:var(--mono);font-size:.64rem;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;}
+  .product-card:nth-child(2) .product-visual-label{color:var(--ink);}
+  .product-visual-title{position:relative;z-index:2;display:block;color:var(--paper);font-family:var(--display);font-size:3.4rem;line-height:.85;text-transform:uppercase;margin-top:12px;max-width:300px;}
+  .product-card:nth-child(2) .product-visual-title{color:var(--ink);}
+  .product-body{display:flex;flex-direction:column;flex:1;padding:30px 30px 27px;}
+  .product-body .mono-label{color:var(--gold-dark);}
+  .product-card:nth-child(2) .product-body .mono-label{color:var(--sun);}
+  .product-body h3{font-size:clamp(2.7rem,4vw,4rem);margin-top:15px;}
+  .product-description{color:var(--ink-soft);margin-top:18px;max-width:480px;}
+  .product-card:nth-child(2) .product-description{color:#e8f0ff;}
+  .quick-view{border:0;border-bottom:1px solid currentColor;background:none;color:var(--gold-dark);padding:0 0 5px;margin-top:24px;align-self:flex-start;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;}
+  .product-card:nth-child(2) .quick-view{color:var(--sun);}
+  .quick-view::after{content:' ↗';}
+  .quick-view-panel{display:none;margin-top:17px;padding:15px;background:var(--paper-deep);font-size:.83rem;line-height:1.55;color:var(--ink-soft);}
+  .quick-view[aria-expanded="true"] + .quick-view-panel{display:block;}
+  .product-card:nth-child(2) .quick-view-panel{background:rgba(255,255,255,.12);color:#edf3ff;}
+  .price-row{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-top:auto;padding-top:25px;border-top:1px dashed var(--line);}
+  .product-card:nth-child(2) .price-row{border-color:rgba(255,255,255,.35);}
+  .standard-price{font-family:var(--mono);font-size:.63rem;line-height:1.4;color:var(--ink-soft);text-transform:uppercase;}
+  .standard-price del{display:block;margin-top:6px;}
+  .product-card:nth-child(2) .standard-price{color:#dce7ff;}
+  .sale-price{text-align:right;font-family:var(--display);font-size:2.8rem;line-height:.8;color:var(--gold-dark);}
+  .product-card:nth-child(2) .sale-price{color:var(--sun);}
+  .sale-price small{display:block;font-family:var(--mono);font-size:.57rem;line-height:1.4;letter-spacing:.08em;margin-bottom:8px;text-transform:uppercase;}
+  .product-body .btn{margin-top:23px;width:100%;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:14px 22px;border:1px solid transparent;border-radius:var(--radius);text-decoration:none;font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:transform .18s ease,background .18s ease,color .18s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-dark{background:var(--ink);color:var(--paper);}
+  .btn-dark:hover{background:var(--gold);color:var(--ink);}
+  .btn-gold{background:var(--gold);color:var(--ink);}
+  .btn-gold:hover{background:var(--sun);}
+  @media(max-width:800px){.product-grid{grid-template-columns:1fr;max-width:580px}.product-card{min-height:0}.product-card:nth-child(2){transform:none}.product-body{min-height:460px;}}
+
+  .shop-promise{background:var(--paper-deep);padding:clamp(70px,9vw,120px) 0;}
+  .promise-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,8vw,120px);align-items:start;}
+  .promise-grid h2{font-size:clamp(3rem,6vw,6rem);}
+  .promise-copy{border-top:2px solid var(--ink);padding-top:18px;}
+  .promise-copy p{max-width:610px;color:var(--ink-soft);font-size:1.03rem;}
+  .promise-list{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:34px;border-top:1px solid var(--line);padding-top:25px;}
+  .promise-list strong{display:block;font-family:var(--display);font-size:1.7rem;text-transform:uppercase;line-height:.9;color:var(--blue-deep);}
+  .promise-list span{display:block;color:var(--ink-soft);font-size:.78rem;line-height:1.45;margin-top:8px;}
+  @media(max-width:700px){.promise-grid{grid-template-columns:1fr}.promise-list{grid-template-columns:1fr;}}
+
+  .shop-cta{background:var(--ink);color:var(--paper);padding:clamp(70px,9vw,110px) 0;}
+  .shop-cta-inner{display:flex;justify-content:space-between;align-items:end;gap:40px;}
+  .shop-cta h2{color:var(--paper);max-width:700px;margin-top:15px;}
+  .shop-cta p{color:#b7c1bb;max-width:510px;margin-top:23px;}
+  .shop-cta .mono-label{color:var(--sun);}
+  @media(max-width:700px){.shop-cta-inner{display:block}.shop-cta .btn{margin-top:30px;width:100%;}}
+
+  footer{background:var(--ink);border-top:1px solid var(--line-light);color:#84908a;padding:28px 0;font-family:var(--mono);font-size:.58rem;line-height:1.5;letter-spacing:.04em;text-transform:uppercase;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  footer a{color:var(--sun);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+  /* Light theme preview */
+  body{background:var(--paper);color:var(--ink);}
+  header,.shop-hero,.shop-cta,footer{background:var(--paper);color:var(--ink);border-color:var(--line);}
+  header .brand img{filter:none;}
+  nav.links a{color:var(--ink-soft);}
+  .menu-toggle{color:var(--ink);}
+  nav.links{background:var(--paper);}
+  nav.links a{color:var(--ink);}
+  .shop-hero h1,.shop-cta h2{color:var(--ink);}
+  .shop-hero-copy,.shop-note,.shop-cta p{color:var(--ink-soft);}
+  .shop-hero-top{border-color:var(--line);color:var(--ink-soft);}
+  .shop-rail{border-color:var(--line);}
+  .shop-rail span{color:var(--ink-soft);border-color:var(--line);}
+  .shop-promise{background:var(--paper-deep);}
+  footer{color:var(--ink-soft);border-color:var(--line);}
+  .footer-inner a{color:var(--gold-text);}
+  .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ink);color:var(--paper);border-top:4px solid var(--gold);padding:22px 24px;box-shadow:0 -12px 30px rgba(0,0,0,.25);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,1,.36,1);}
+  .cookie-banner.is-visible{transform:translateY(0);}
+  .cookie-inner{width:min(1180px,100% - 32px);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .cookie-text{flex:1 1 380px;font-size:.9rem;color:var(--paper);}
+  .cookie-text a{color:var(--gold);}
+  .cookie-actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .cookie-btn{min-height:46px;padding:12px 20px;border:1px solid transparent;border-radius:var(--radius);font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s ease,color .2s ease,transform .2s ease;}
+  .cookie-btn:hover{transform:translateY(-2px);}
+  .cookie-btn.accept{background:var(--gold);color:var(--ink);}
+  .cookie-btn.accept:hover{background:var(--gold-dark);color:var(--white);}
+  .cookie-btn.essential{background:transparent;color:var(--paper);border-color:#6e7a75;}
+  .cookie-btn.essential:hover{border-color:var(--gold);color:var(--gold);}
+  .brand-name span,.eyebrow,.shop-cta .mono-label{color:var(--gold-text)!important;}
+
+</style>
+<script>document.documentElement.classList.add('js-enabled');</script>
+</head>
+<body>
+<a class="sr-skip" href="#main">Zum Inhalt springen</a>
+<header>
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="PCT Transformation Startseite">
+      <img src="https://static.wixstatic.com/media/990908_634c50dfafec42fcb68390e1c644025d~mv2.png/v1/fill/w_384,h_340,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/990908_634c50dfafec42fcb68390e1c644025d~mv2.png" alt="PCT Logo">
+      <span class="brand-name">PCT<span>Paul Christian Transformation</span></span>
+    </a>
+    <nav class="links" id="site-navigation" aria-label="Hauptnavigation">
+      <a href="index.html">Startseite</a>
+      <a href="index.html#ansatz">Vision</a>
+      <a href="angebote.html">Services</a>
+      <a href="shop.html" aria-current="page">Shop</a>
+      <a href="index.html#paul">Coach</a>
+      <a href="index.html#reels">Stories</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+    </nav>
+    <a class="nav-cta" href="index.html#kontakt">Beratung buchen ↗</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Menü öffnen">☰</button>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+</header>
+
+<main id="main">
+  <section class="shop-hero">
+    <div class="container shop-hero-top mono-label"><span>PCT / SHOP</span><span>DIGITALE TOOLS / 2026</span></div>
+    <div class="container shop-hero-inner">
+      <div><p class="mono-label eyebrow">Shop / Für deinen nächsten Schritt</p><h1>Die richtigen<br>Tools für<br><em>deinen Weg.</em></h1><p class="shop-hero-copy">Praktische Pläne, die dir Struktur geben — ohne komplizierte Regeln und ohne den Druck, perfekt sein zu müssen.</p></div>
+      <div class="shop-note"><strong>Start where you are.</strong><span>Wähle ein Tool, das zu deinem aktuellen Ziel passt, und bringe deinen Alltag Schritt für Schritt in Bewegung.</span></div>
+    </div>
+    <div class="shop-rail"><span><strong>01</strong> Ernährungsplan — individuell</span><span><strong>02</strong> 7-Days Renewal Detox Plan</span></div>
+  </section>
+
+  <section class="products">
+    <div class="container">
+      <div class="section-intro scroll-reveal"><p class="mono-label eyebrow">01 / PCT Shop</p><h2>Pläne zum Loslegen.</h2><p>Wähle deinen Plan, öffne die Schnellansicht für mehr Details und stelle anschließend deine Kaufanfrage.</p></div>
+      <div class="product-grid scroll-stagger">
+        <article class="product-card">
+          <div class="product-visual"><img src="https://static.wixstatic.com/media/990908_c53196934404452893edb54ec0791fbc~mv2.png/v1/fill/w_996,h_1410,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/990908_c53196934404452893edb54ec0791fbc~mv2.png" alt="PCT individueller Ernährungsplan" loading="lazy"><div><span class="product-visual-label">PCT / Food System</span><strong class="product-visual-title">Eat with<br>purpose.</strong></div></div>
+          <div class="product-body">
+            <p class="mono-label">Individuell / Digitaler Plan</p>
+            <h3>PCT Ernährungsplan — Individuell</h3>
+            <p class="product-description">Ein Ernährungsplan, der zu deinen Zielen, deinem Alltag und deinem persönlichen Rhythmus passt.</p>
+            <button class="quick-view" type="button" aria-expanded="false" aria-controls="nutrition-details">Schnellansicht</button>
+            <div class="quick-view-panel" id="nutrition-details">Individuelle Orientierung für mehr Energie, nachhaltiges Abnehmen und eine Ernährung, die du langfristig umsetzen kannst.</div>
+            <div class="price-row"><div class="standard-price">Standardpreis<del>70,00 CHF</del></div><div class="sale-price"><small>Sale-Preis</small>50,00 CHF</div></div>
+            <a class="btn btn-dark" href="index.html#kontakt">Kaufanfrage stellen ↗</a>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-visual"><img src="https://static.wixstatic.com/media/990908_a320e54917444b179d4bbe704008ceff~mv2.png/v1/fill/w_996,h_624,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/990908_a320e54917444b179d4bbe704008ceff~mv2.png" alt="7-Days Renewal Detox Plan" loading="lazy"><div><span class="product-visual-label">Neu / 7 Tage</span><strong class="product-visual-title">Reset<br>your rhythm.</strong></div></div>
+          <div class="product-body">
+            <p class="mono-label">Neues Produkt / Digitaler Plan</p>
+            <h3>7-Days Renewal Detox Plan</h3>
+            <p class="product-description">Sieben Tage, um bewusst neu zu starten, deinen Rhythmus zu resetten und wieder Klarheit für deine nächsten Schritte zu gewinnen.</p>
+            <button class="quick-view" type="button" aria-expanded="false" aria-controls="detox-details">Schnellansicht</button>
+            <div class="quick-view-panel" id="detox-details">Ein kompakter 7-Tage-Plan für einen bewussten Neustart mit klaren täglichen Impulsen und einem einfachen, alltagstauglichen Ablauf.</div>
+            <div class="price-row"><div class="standard-price">Standardpreis<del>50,00 CHF</del></div><div class="sale-price"><small>Sale-Preis</small>29,00 CHF</div></div>
+            <a class="btn btn-gold" href="index.html#kontakt">Kaufanfrage stellen ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop-promise">
+    <div class="container promise-grid scroll-reveal">
+      <h2>Einfach.<br>Klar.<br>Machbar.</h2>
+      <div class="promise-copy"><p>Die PCT Pläne sollen dich nicht mit noch mehr Regeln überladen. Sie geben dir eine klare Richtung und genug Flexibilität, damit du wirklich dranbleiben kannst.</p><div class="promise-list"><div><strong>Struktur</strong><span>Ein Plan, der dir Orientierung im Alltag gibt.</span></div><div><strong>Fokus</strong><span>Konkrete Schritte statt widersprüchlicher Trends.</span></div><div><strong>Balance</strong><span>Gesundheit, die in dein echtes Leben passt.</span></div><div><strong>Support</strong><span>Bei Fragen bist du nicht auf dich allein gestellt.</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="shop-cta">
+    <div class="container shop-cta-inner scroll-reveal"><div><p class="mono-label">02 / Dein Start</p><h2>Welcher Plan passt zu dir?</h2><p>Schreib uns kurz, was du erreichen möchtest. Wir helfen dir, den passenden Plan auszuwählen.</p></div><a class="btn btn-gold" href="index.html#kontakt">Kaufanfrage senden ↗</a></div>
+  </section>
+</main>
+
+<footer><div class="container footer-inner"><span>© 2026 PCT / Paul Christian Transformation</span><span><a href="datenschutz.html">Datenschutz</a> · <a href="impressum.html">Impressum</a> · <a href="agb.html">AGB</a> · <a href="https://wildwave.ch" target="_blank" rel="noopener">WILDWAVE Digital Agency</a></span></div></footer>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navigation = document.querySelector('.links');
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = navigation.classList.toggle('is-open');
+    document.body.classList.toggle('menu-open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+    menuToggle.textContent = isOpen ? '×' : '☰';
+  });
+  navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+    navigation.classList.remove('is-open');
+    document.body.classList.remove('menu-open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Menü öffnen');
+    if (menuToggle) menuToggle.textContent = '☰';
+  }));
+  document.querySelectorAll('.quick-view').forEach((button) => button.addEventListener('click', () => {
+    button.setAttribute('aria-expanded', String(button.getAttribute('aria-expanded') !== 'true'));
+  }));
+  const progressBar = document.querySelector('.scroll-progress span');
+  let progressFrame = 0;
+  const updateScrollProgress = () => {
+    if (!progressBar) return;
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.transform = `scaleX(${scrollable > 0 ? window.scrollY / scrollable : 0})`;
+    progressFrame = 0;
+  };
+  window.addEventListener('scroll', () => {
+    if (!progressFrame) progressFrame = requestAnimationFrame(updateScrollProgress);
+  }, { passive: true });
+  updateScrollProgress();
+
+  const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealItems = document.querySelectorAll('.scroll-reveal, .scroll-stagger');
+  if (!('IntersectionObserver' in window) || motionReduced) {
+    revealItems.forEach((item) => item.classList.add('is-visible'));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: .16, rootMargin: '0px 0px -7% 0px' });
+    revealItems.forEach((item) => revealObserver.observe(item));
+  }
+</script>
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie-Hinweis" aria-live="polite">
+  <div class="cookie-inner"><p class="cookie-text">Diese Website verwendet Cookies, um die Nutzung zu verbessern. Notwendige Cookies sind für den Betrieb erforderlich. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p><div class="cookie-actions"><button class="cookie-btn essential" type="button" data-cookie="essential">Nur notwendige</button><button class="cookie-btn accept" type="button" data-cookie="all">Alle akzeptieren</button></div></div>
+</div>
+<script>
+  const cookieBanner = document.querySelector('#cookie-banner');
+  const cookieChoice = localStorage.getItem('pct-cookie-consent');
+  if (!cookieChoice) {
+    cookieBanner?.classList.add('is-visible');
+  }
+  cookieBanner?.querySelectorAll('[data-cookie]').forEach((button) => button.addEventListener('click', () => {
+    localStorage.setItem('pct-cookie-consent', button.dataset.cookie);
+    cookieBanner.classList.remove('is-visible');
+  }));
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+@media (max-width: 620px) {
+  .hero-content h1 {
+    font-size: clamp(38px, 10vw, 50px);
+    letter-spacing: -.1em;
+  }
+}

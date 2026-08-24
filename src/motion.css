@@ -1,0 +1,19 @@
+.motion-section { position: relative; isolation: isolate; }
+.motion-section::after { content: ''; position: absolute; z-index: -1; width: min(42vw, 560px); height: min(42vw, 560px); border-radius: 50%; pointer-events: none; filter: blur(2px); }
+.challenge-motion-section::after { top: 18%; right: -26%; border: 1px solid rgba(185, 154, 91, .18); background: radial-gradient(circle, rgba(198, 50, 67, .08), transparent 68%); }
+.system-motion-section::after { top: 7%; left: -24%; background: radial-gradient(circle, rgba(210, 64, 80, .11), transparent 68%); }
+.calculator-motion-section::after { right: -22%; bottom: 6%; background: radial-gradient(circle, rgba(217, 194, 140, .09), transparent 70%); }
+.paul-motion-section::after { top: 20%; right: -25%; background: radial-gradient(circle, rgba(170, 40, 58, .08), transparent 70%); }
+.booking-motion-section::after { top: -34%; left: 26%; width: min(52vw, 720px); height: min(52vw, 720px); background: radial-gradient(circle, rgba(214, 64, 80, .18), transparent 66%); }
+.contact-motion-section::after { right: -28%; bottom: -35%; background: radial-gradient(circle, rgba(232, 206, 145, .11), transparent 68%); }
+
+.hero-orbit { position: absolute; z-index: 1; top: 13%; right: clamp(-48px, 5vw, 80px); width: min(32vw, 470px); aspect-ratio: 1; border: 1px solid rgba(224, 188, 126, .28); border-radius: 50%; pointer-events: none; }
+.hero-orbit::before, .hero-orbit::after { content: ''; position: absolute; border: 1px solid rgba(224, 188, 126, .18); border-radius: 50%; }
+.hero-orbit::before { inset: 14%; }.hero-orbit::after { inset: 31%; }
+.hero-orbit span { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: #d64050; box-shadow: 0 0 20px rgba(214, 64, 80, .9); }
+.hero-orbit span:nth-child(1) { top: 5%; left: 18%; }.hero-orbit span:nth-child(2) { right: 12%; bottom: 25%; width: 5px; height: 5px; background: #d9c28c; box-shadow: 0 0 18px rgba(217, 194, 140, .8); }.hero-orbit span:nth-child(3) { bottom: 8%; left: 38%; width: 4px; height: 4px; }
+
+.pillar-card, .calculator-panel, .paul-photo, .booking-card, .contact-form { will-change: transform; }
+.system-heading { will-change: transform; }
+@media (max-width: 620px) { .hero-orbit { top: 11%; right: -80px; width: 260px; }.motion-section::after { width: 260px; height: 260px; } }
+@media (prefers-reduced-motion: reduce) { .motion-section::after, .hero-orbit { display: none; } }

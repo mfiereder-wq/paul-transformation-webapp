@@ -1,0 +1,33 @@
+.scroll-story { height: 420vh; position: relative; background: #090706; }
+.story-sticky { position: sticky; top: 0; height: 100svh; min-height: 650px; overflow: hidden; display: grid; align-items: center; }
+.story-visual, .story-vignette, .story-frame { position: absolute; inset: 0; width: 100%; height: 100%; }
+.story-visual { background: #120908; overflow: hidden; }
+.story-frame { object-fit: cover; object-position: 72% center; opacity: 0; transform: scale(1.08) translate3d(2%,0,0); transition: opacity 620ms linear, transform 1200ms cubic-bezier(.23,1,.32,1), filter 900ms ease; filter: saturate(.75) contrast(1.1); }
+.story-frame > img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 72% center; }
+.story-frame.is-active { opacity: 1; transform: scale(1) translate3d(0,0,0); filter: saturate(1) contrast(1.04); }
+.story-grid { position: absolute; inset: -15%; z-index: 1; opacity: .17; background-image: linear-gradient(rgba(232,211,171,.32) 1px, transparent 1px), linear-gradient(90deg, rgba(232,211,171,.32) 1px, transparent 1px); background-size: 70px 70px; mask-image: radial-gradient(circle at 70% 45%, #000 0 25%, transparent 62%); transform: perspective(700px) rotateX(66deg) translateY(25%); transform-origin: bottom; transition: transform 1100ms cubic-bezier(.23,1,.32,1), opacity 700ms ease; }
+.story-traces { position: absolute; z-index: 2; inset: 0; overflow: hidden; pointer-events: none; }
+.story-traces i { position: absolute; display: block; height: 1px; width: 44vw; background: linear-gradient(90deg, transparent, rgba(226,192,120,.82), transparent); transform: rotate(-36deg); opacity: 0; transition: opacity 400ms ease, transform 1100ms cubic-bezier(.23,1,.32,1); }
+.story-traces i:nth-child(1) { top: 18%; right: -22%; }.story-traces i:nth-child(2) { top: 50%; right: -28%; }.story-traces i:nth-child(3) { top: 76%; right: -20%; }
+.story-vignette { z-index: 3; pointer-events: none; background: linear-gradient(90deg, rgba(9,7,6,.97) 0%, rgba(9,7,6,.83) 32%, rgba(9,7,6,.12) 68%, rgba(9,7,6,.14) 100%), linear-gradient(0deg, rgba(9,7,6,.66), transparent 42%); transition: background 800ms ease; }
+.story-copy { position: relative; z-index: 3; width: min(650px, 57vw); margin-left: clamp(20px, 8vw, 132px); color: #f2eee6; }
+.story-copy .eyebrow { color: #dfc58f; margin-bottom: 22px; }
+.story-kicker { margin: 0 0 12px; color: #d8cfbf; font: 700 10px 'DM Mono', monospace; letter-spacing: .2em; text-transform: uppercase; }
+.story-copy h1 { margin: 0; color: #f9f4ea; font: 900 clamp(46px, 6vw, 92px)/.88 'DM Mono', monospace; letter-spacing: -.09em; transition: opacity 180ms ease, transform 260ms cubic-bezier(.23,1,.32,1); }
+.story-copy h1 em { color: #c63243; font-style: normal; }
+.story-copy .lead { max-width: 560px; color: #e2d9c9; font-size: clamp(18px, 2vw, 23px); }
+.story-copy .button.secondary { color: #f2eee6; border-color: #f2eee6; }
+.story-progress { display: flex; gap: 7px; margin: 28px 0 4px; }
+.story-progress i { width: 28px; height: 3px; background: #806b5d; transition: background 200ms ease, width 200ms ease; }
+.story-progress i.is-current { width: 48px; background: #dfc58f; }
+.story-chapter-label { margin: 18px 0 0; color: #dfc58f; font: 700 9px 'DM Mono', monospace; letter-spacing: .16em; }
+.story-copy .stats { border-color: #f2eee644; }
+.story-copy .stats b { color: #dfc58f; }
+.story-copy .stats span { color: #e7dfd2; }
+.story-mark { position: absolute; z-index: 4; right: clamp(20px, 4vw, 64px); top: 28px; color: #f6edde; font: 700 10px 'DM Mono', monospace; letter-spacing: .2em; }
+.story-counter { position: absolute; z-index: 4; right: clamp(20px, 4vw, 64px); top: 56%; color: #f8ecda; font-family: 'DM Mono', monospace; text-align: right; }.story-counter strong { display: block; font-size: clamp(48px, 7vw, 112px); letter-spacing: -.12em; line-height: .72; }.story-counter span { display: block; margin-top: 14px; font-size: 10px; letter-spacing: .18em; }
+.story-scroll-hint { position: absolute; z-index: 3; right: clamp(20px, 4vw, 64px); bottom: 28px; margin: 0; color: #f6edde; font: 700 10px 'DM Mono', monospace; letter-spacing: .18em; writing-mode: vertical-rl; }
+.story-scroll-hint span { margin-top: 9px; font-size: 16px; }
+ .story-sticky[data-stage="1"] .story-grid { opacity: .28; transform: perspective(700px) rotateX(61deg) translateY(20%) translateX(-4%); }.story-sticky[data-stage="1"] .story-traces i { opacity: .5; transform: rotate(-36deg) translateX(-18%); }.story-sticky[data-stage="2"] .story-grid { opacity: .38; transform: perspective(700px) rotateX(54deg) translateY(14%) translateX(-8%); }.story-sticky[data-stage="2"] .story-traces i { opacity: .8; transform: rotate(-36deg) translateX(-36%); }.story-sticky[data-stage="3"] .story-grid { opacity: .14; transform: perspective(700px) rotateX(68deg) translateY(30%) translateX(-14%); }.story-sticky[data-stage="3"] .story-traces i { opacity: .25; transform: rotate(-36deg) translateX(-58%); }.story-sticky.is-transitioning h1, .story-sticky.is-transitioning .lead, .story-sticky.is-transitioning .story-kicker { opacity: 0; transform: translateY(12px); }
+@media (max-width: 760px) { .scroll-story { height: 290vh; }.story-sticky { min-height: 580px; }.story-frame > img { object-position: 62% center; }.story-vignette { background: linear-gradient(180deg, rgba(9,7,6,.12), rgba(9,7,6,.12) 36%, rgba(9,7,6,.94) 80%, rgba(9,7,6,.98) 100%); }.story-copy { align-self: end; width: auto; margin: 0 20px 66px; }.story-copy h1 { font-size: clamp(40px, 13vw, 62px); }.story-copy .lead { font-size: 17px; margin: 18px 0; }.story-copy .stats { gap: 17px; margin-top: 28px; }.story-copy .stats b { font-size: 21px; }.story-copy .stats span { font-size: 8px; }.story-progress { margin: 18px 0 0; }.story-mark { top: 20px; font-size: 8px; }.story-counter { right: 20px; top: 18%; }.story-counter strong { font-size: 46px; }.story-grid { background-size: 45px 45px; }.story-traces { display:none; }.story-scroll-hint { display: none; } }
+@media (prefers-reduced-motion: reduce) { .scroll-story { height: auto; }.story-sticky { position: relative; min-height: 790px; }.story-frame:not(:first-child) { display: none; }.story-scroll-hint { display: none; }.story-progress { display: none; } }
