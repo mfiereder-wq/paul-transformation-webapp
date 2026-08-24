@@ -9,11 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared-pages.css">
+<script>document.documentElement.classList.add('js-enabled');</script>
 </head>
 <body>
+<a class="sr-skip" href="#main">Zum Inhalt springen</a>
 <header class="site-header"><div class="nav-inner"><a class="brand" href="/" aria-label="Paul Christian Transformation Startseite"><img src="/assets/pct-logo.png" alt="PCT Logo"><span>PAUL CHRISTIAN<small>TRANSFORMATION</small></span></a><nav class="site-nav" id="site-navigation" aria-label="Hauptnavigation"><a href="/#system">System</a><a href="/#rechner">Rechner</a><a href="/#paul">Über Paul</a><a href="/services">Services</a><a href="/shop">Shop</a><a href="/datenschutz">Datenschutz</a><a href="/impressum">Impressum</a><a href="/agb">AGB</a><a class="nav-book" href="/#buchen">Termin buchen</a></nav><button class="menu-button" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-navigation">☰</button></div></header>
 
-<main>
+<main id="main">
   <div class="container">
     <h1>Allgemeine<br>Geschäftsbedingungen</h1>
     <p class="updated">Stand: 21. August 2026</p>
@@ -61,7 +63,7 @@
 
     <section>
       <h2>9. Datenschutz</h2>
-      <p>Die Verarbeitung personenbezogener Daten erfolgt gemäss der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+      <p>Die Verarbeitung personenbezogener Daten erfolgt gemäss der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
     </section>
 
     <section>
@@ -76,9 +78,13 @@
 <footer>
   <div class="container footer-inner">
     <span>© 2026 PCT / Paul Christian Transformation</span>
-    <span><a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a></span>
+    <span><a href="/datenschutz">Datenschutz</a> · <a href="/impressum">Impressum</a> · <a href="/agb">AGB</a> · <a href="https://wildwave.ch" target="_blank" rel="noopener">WILDWAVE Digital Agency</a></span>
   </div>
 </footer>
-<script>const menuToggle=document.querySelector('.menu-button');const navigation=document.querySelector('.site-nav');menuToggle?.addEventListener('click',()=>{const open=navigation.classList.toggle('is-open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');menuToggle.textContent=open?'×':'☰';});navigation?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navigation.classList.remove('is-open');menuToggle?.setAttribute('aria-expanded','false');menuToggle?.setAttribute('aria-label','Menü öffnen');if(menuToggle)menuToggle.textContent='☰';}));</script>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie-Hinweis" aria-live="polite">
+  <div class="cookie-inner"><p class="cookie-text">Diese Website verwendet Cookies, um die Nutzung zu verbessern. Notwendige Cookies sind für den Betrieb erforderlich. Mehr dazu in der <a href="/datenschutz">Datenschutzerklärung</a>.</p><div class="cookie-actions"><button class="cookie-btn essential" type="button" data-cookie="essential">Nur notwendige</button><button class="cookie-btn accept" type="button" data-cookie="all">Alle akzeptieren</button></div></div>
+</div>
+<script src="/pages-shared.js" defer></script>
 </body>
 </html>
