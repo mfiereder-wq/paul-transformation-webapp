@@ -7,8 +7,8 @@
   --paper:#f2efe7;
   --paper-soft:#e9e3d5;
   --cream:#f6f0e7;
-  --red:#c63243;
-  --red-hover:#e14356;
+  --red:#6f2c26;
+  --red-hover:#96453a;
   --gold:#d9c28c;
   --muted:#6b6259;
   font-family:'Manrope',system-ui,sans-serif;
@@ -45,7 +45,7 @@ h1 em,h2 em{color:var(--red);font-style:normal}
 .brand small{display:block;margin-top:4px;color:#d1c4b0;font-size:8px;letter-spacing:.2em}
 .site-nav{display:flex;align-items:center;gap:clamp(10px,1.4vw,22px)}
 .site-nav a,.nav-book{color:#e7ded1;font:700 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;white-space:nowrap}
-.site-nav a:hover{color:#ef6c7b}
+.site-nav a:hover{color:#c08a7a}
 .nav-book{display:inline-flex;align-items:center;gap:6px;padding:12px 16px;background:var(--red);color:#fff3ed!important;transition:background .18s ease,transform .18s ease}
 .nav-book:hover{background:var(--red-hover);transform:translateY(-1px)}
 .menu-button{display:none;border:0;color:#f5eee4;background:transparent;font-size:22px;line-height:1}
@@ -187,7 +187,7 @@ footer{background:var(--ink);color:#aca49a;padding:28px clamp(20px,5vw,64px);dis
 .footer-inner{display:contents}
 footer span{font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.04em}
 footer a{color:var(--gold);text-decoration:none}
-footer a:hover{color:#ef6c7b}
+footer a:hover{color:#c08a7a}
 @media(max-width:620px){footer{flex-direction:column}}
 
 /* ---------- cookie banner ---------- */
