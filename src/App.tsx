@@ -169,7 +169,7 @@ function App() {
     <main>
       <header className="site-header">
         <a href="#top" className="brand" aria-label="Paul Christian Transformation Startseite">
-          <img src="/assets/pct-logo.png" alt="PCT Logo" />
+          <img src="https://res.cloudinary.com/dtzpydtdg/image/upload/v1787646036/48989-removebg-preview_wcwifq.png" alt="PCT Logo" />
           <span>{siteBrand}<small>{siteBrandSubtitle}</small></span>
         </a>
         <nav className={menuOpen ? 'nav-open' : ''} aria-label="Hauptnavigation">
