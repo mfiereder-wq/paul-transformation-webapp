@@ -300,7 +300,22 @@ function App() {
 
       <section id="paul" className="paul-section section-shell motion-section paul-motion-section">
         <motion.div className="paul-photo" {...reveal(40)}><motion.img src="/assets/paul-portrait.jpg" alt="Paul Christian" initial={{ scale: reduceMotion ? 1 : 1.08 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: .3 }} transition={{ duration: reduceMotion ? 0 : 1.15, ease: [0.22, 1, 0.36, 1] }} /><div className="photo-note"><span>PCT</span><p>MELLINGEN<br />SWITZERLAND</p></div></motion.div>
-        <motion.div className="paul-copy" {...reveal(40, .12)}><p className="eyebrow">Dein Coach</p><h2>PAUL<br /><em>CHRISTIAN.</em></h2><p>Paul begleitet Menschen mit klaren Prinzipien, persönlicher Aufmerksamkeit und echter Begeisterung für langfristige Veränderung. Der Fokus liegt nicht auf dem nächsten kurzfristigen Plan, sondern auf einem Weg, der zu dir passt.</p><p>Online oder vor Ort in Mellingen entsteht ein Rahmen, der Training, Ernährung und mentale Stärke zusammendenkt.</p><button type="button" className="text-link" onClick={() => scrollToId('buchen')}>Erstgespräch buchen <MoveRight size={17} /></button></motion.div>
+        <motion.div className="paul-copy" {...reveal(40, .12)}>
+          <p className="eyebrow">Dein Coach</p>
+          <h2>PAUL<br /><em>CHRISTIAN.</em></h2>
+          <p>Meine persönliche Transformationsreise begann 2014. Auf der Suche nach Identität und Selbstwert habe ich zahlreiche Trainings-, Ernährungs- und Persönlichkeitsentwicklungskonzepte durchlaufen – bis mir klar wurde, dass nachhaltige Veränderung mehr braucht als einen gesunden Körper. Heute bin ich ein selbstbewusster, körperlich fitter und mental stärkerer Mann, der gelernt hat, Körper, Geist und Seele in Balance zu bringen. Diese persönliche Erfahrung ist die Grundlage meiner Arbeit als Coach.</p>
+          <p>Meine Mission ist es, Menschen auf ihrer persönlichen Transformationsreise zu begleiten und ihnen zu helfen, ihre beste Version zu entwickeln – mit mehr Gesundheit, Selbstvertrauen, Disziplin und Lebensqualität. Ich gebe dir keinen simplen Trainings- oder Ernährungsplan, sondern helfe dir, nachhaltige Gewohnheiten und einen Lebensstil aufzubauen, den du langfristig leben kannst.</p>
+          <ul className="paul-credentials">
+            <li><strong>Seit 2017</strong><span>Coaching-Erfahrung</span></li>
+            <li><strong>400+</strong><span>begleitete Klient:innen</span></li>
+            <li><strong>15+ Jahre</strong><span>eigene Trainingserfahrung</span></li>
+            <li><strong>SNBF</strong><span>Vizemeister 2017</span></li>
+            <li><strong>IFBB</strong><span>Schweizer Juniorenmeister 2018</span></li>
+            <li><strong>SAFS / Clever Fit</strong><span>Fitness- &amp; Ernährungsausbildung, B-Lizenz</span></li>
+          </ul>
+          <p className="paul-note">Für mich ist Coaching mehr als ein Beruf – es ist eine Berufung, Menschen ganzheitlich auf ihrem Weg zu begleiten. Wer mehr über meine Werte und mein Engagement über das Training hinaus erfahren möchte, findet dies unter <a href="/themen">Themen</a>.</p>
+          <button type="button" className="text-link" onClick={() => scrollToId('buchen')}>Erstgespräch buchen <MoveRight size={17} /></button>
+        </motion.div>
       </section>
 
       <section id="buchen" className="booking-section section-shell motion-section booking-motion-section">
@@ -322,7 +337,7 @@ function App() {
           {contactSent && <p className="form-notice"><CircleCheck size={17} />Dein E-Mail-Programm sollte sich jetzt öffnen.</p>}
         </motion.form>
       </section>
-      <motion.footer initial={{ opacity: 0, y: reduceMotion ? 0 : 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .4 }} transition={{ duration: reduceMotion ? 0 : .5 }}><span>© 2026 Paul Christian Transformation</span><span><a href="/services">Services</a> · <a href="/shop">Shop</a> · <a href="/datenschutz">Datenschutz</a> · <a href="/impressum">Impressum</a> · <a href="/agb">AGB</a> · Mellingen · Schweiz</span><span>Website erstellt von <a href="https://wildwave.ch" target="_blank" rel="noopener noreferrer">WILDWAVE Marketing</a></span></motion.footer>
+      <motion.footer initial={{ opacity: 0, y: reduceMotion ? 0 : 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .4 }} transition={{ duration: reduceMotion ? 0 : .5 }}><span>© 2026 Paul Christian Transformation</span><span><a href="/services">Services</a> · <a href="/shop">Shop</a> · <a href="/themen">Themen</a> · <a href="/datenschutz">Datenschutz</a> · <a href="/impressum">Impressum</a> · <a href="/agb">AGB</a> · Mellingen · Schweiz</span><span>Website erstellt von <a href="https://wildwave.ch" target="_blank" rel="noopener noreferrer">WILDWAVE Marketing</a></span></motion.footer>
     </main>
   )
 }

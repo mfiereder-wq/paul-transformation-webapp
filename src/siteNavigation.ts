@@ -4,9 +4,7 @@ export const siteNavigation = [
   { label: 'Über Paul', href: '/#paul' },
   { label: 'Services', href: '/services' },
   { label: 'Shop', href: '/shop' },
-  { label: 'Datenschutz', href: '/datenschutz' },
-  { label: 'Impressum', href: '/impressum' },
-  { label: 'AGB', href: '/agb' },
+  { label: 'Themen', href: '/themen' },
 ] as const
 
 export const siteBrand = 'PAUL CHRISTIAN'

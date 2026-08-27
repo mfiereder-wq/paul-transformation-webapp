@@ -5,10 +5,12 @@
     { "source": "/datenschutz.html", "destination": "/pages/datenschutz.html" },
     { "source": "/impressum.html", "destination": "/pages/impressum.html" },
     { "source": "/agb.html", "destination": "/pages/agb.html" },
+    { "source": "/themen.html", "destination": "/pages/themen.html" },
     { "source": "/services", "destination": "/pages/angebote.html" },
     { "source": "/shop", "destination": "/pages/shop.html" },
     { "source": "/datenschutz", "destination": "/pages/datenschutz.html" },
     { "source": "/impressum", "destination": "/pages/impressum.html" },
-    { "source": "/agb", "destination": "/pages/agb.html" }
+    { "source": "/agb", "destination": "/pages/agb.html" },
+    { "source": "/themen", "destination": "/pages/themen.html" }
   ]
 }
