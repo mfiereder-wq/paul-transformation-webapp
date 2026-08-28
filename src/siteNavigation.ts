@@ -1,8 +1,6 @@
 export const siteNavigation = [
-  { label: 'System', href: '/#system' },
-  { label: 'Rechner', href: '/#rechner' },
-  { label: 'Über Paul', href: '/#paul' },
-  { label: 'Services', href: '/services' },
+  { label: 'Welcome', href: '/' },
+  { label: 'Angebot', href: '/services' },
   { label: 'Shop', href: '/shop' },
   { label: 'Themen', href: '/themen' },
 ] as const

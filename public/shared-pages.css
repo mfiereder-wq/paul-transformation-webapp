@@ -89,6 +89,7 @@ main{display:block}
 
 /* ---------- service / product / comparison / effect cards ---------- */
 .services-grid,.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.services-grid.cols-4{grid-template-columns:repeat(4,1fr)}
 .product-grid{grid-template-columns:repeat(2,1fr)}
 .service-card,.product-card{background:#fff;border:1px solid rgba(33,29,26,.08);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
 .service-card:hover,.product-card:hover{transform:translateY(-4px);box-shadow:0 18px 34px rgba(33,29,26,.12)}
@@ -157,9 +158,15 @@ main{display:block}
 
 @media(max-width:900px){
   .services-grid,.product-grid,.comparison-grid,.effects-grid{grid-template-columns:1fr}
+  .services-grid.cols-4{grid-template-columns:1fr 1fr}
   .promise-grid{grid-template-columns:1fr}
   .promise-list{grid-template-columns:1fr}
 }
+
+/* quick-check card */
+.quick-check-card{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:#fff;border:1px solid rgba(33,29,26,.1);border-radius:8px;padding:32px}
+.quick-check-card h3{font-size:26px;margin:6px 0 8px}
+.quick-check-card p{color:var(--muted);margin:0;max-width:420px}
 
 /* ---------- legal pages (agb / datenschutz / impressum) ---------- */
 main .container > h1{padding-top:150px;font-size:clamp(40px,6vw,76px);color:#211d1a;margin-bottom:6px}

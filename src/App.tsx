@@ -301,7 +301,7 @@ function App() {
       <section id="paul" className="paul-section section-shell motion-section paul-motion-section">
         <motion.div className="paul-photo" {...reveal(40)}><motion.img src="/assets/paul-portrait.jpg" alt="Paul Christian" initial={{ scale: reduceMotion ? 1 : 1.08 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: .3 }} transition={{ duration: reduceMotion ? 0 : 1.15, ease: [0.22, 1, 0.36, 1] }} /><div className="photo-note"><span>PCT</span><p>MELLINGEN<br />SWITZERLAND</p></div></motion.div>
         <motion.div className="paul-copy" {...reveal(40, .12)}>
-          <p className="eyebrow">Dein Coach</p>
+          <p className="eyebrow">Vision</p>
           <h2>PAUL<br /><em>CHRISTIAN.</em></h2>
           <p>Meine persönliche Transformationsreise begann 2014. Auf der Suche nach Identität und Selbstwert habe ich zahlreiche Trainings-, Ernährungs- und Persönlichkeitsentwicklungskonzepte durchlaufen – bis mir klar wurde, dass nachhaltige Veränderung mehr braucht als einen gesunden Körper. Heute bin ich ein selbstbewusster, körperlich fitter und mental stärkerer Mann, der gelernt hat, Körper, Geist und Seele in Balance zu bringen. Diese persönliche Erfahrung ist die Grundlage meiner Arbeit als Coach.</p>
           <p>Meine Mission ist es, Menschen auf ihrer persönlichen Transformationsreise zu begleiten und ihnen zu helfen, ihre beste Version zu entwickeln – mit mehr Gesundheit, Selbstvertrauen, Disziplin und Lebensqualität. Ich gebe dir keinen simplen Trainings- oder Ernährungsplan, sondern helfe dir, nachhaltige Gewohnheiten und einen Lebensstil aufzubauen, den du langfristig leben kannst.</p>
