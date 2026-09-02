@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import {
@@ -130,6 +130,16 @@ function App() {
   const [calcName, setCalcName] = useState('')
   const [calcEmail, setCalcEmail] = useState('')
   const [contactSent, setContactSent] = useState(false)
+  const [cookieVisible, setCookieVisible] = useState(false)
+
+  useEffect(() => {
+    if (!localStorage.getItem('pct-cookie-consent')) setCookieVisible(true)
+  }, [])
+
+  const handleCookieChoice = (choice: 'essential' | 'all') => {
+    localStorage.setItem('pct-cookie-consent', choice)
+    setCookieVisible(false)
+  }
 
   const result = useMemo(() => getTimeline(calculator), [calculator])
   const reveal = (distance = 34, delay = 0) => ({
@@ -338,6 +348,18 @@ function App() {
         </motion.form>
       </section>
       <motion.footer initial={{ opacity: 0, y: reduceMotion ? 0 : 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .4 }} transition={{ duration: reduceMotion ? 0 : .5 }}><span>© 2026 Paul Christian Transformation</span><span><a href="/services">Services</a> · <a href="/shop">Shop</a> · <a href="/themen">Themen</a> · <a href="/datenschutz">Datenschutz</a> · <a href="/impressum">Impressum</a> · <a href="/agb">AGB</a> · Mellingen · Schweiz</span><span>Website erstellt von <a href="https://wildwave.ch" target="_blank" rel="noopener noreferrer">WILDWAVE Marketing</a></span></motion.footer>
+
+      {cookieVisible && (
+        <div className={`cookie-banner${cookieVisible ? ' is-visible' : ''}`} role="dialog" aria-label="Cookie-Hinweis" aria-live="polite">
+          <div className="cookie-inner">
+            <p className="cookie-text">Diese Website verwendet Cookies, um die Nutzung zu verbessern. Notwendige Cookies sind für den Betrieb erforderlich. Mehr dazu in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+            <div className="cookie-actions">
+              <button className="cookie-btn essential" type="button" onClick={() => handleCookieChoice('essential')}>Nur notwendige</button>
+              <button className="cookie-btn accept" type="button" onClick={() => handleCookieChoice('all')}>Alle akzeptieren</button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
