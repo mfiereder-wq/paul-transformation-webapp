@@ -23,8 +23,8 @@ import './challenge.css'
 import './motion.css'
 import { siteNavigation, siteBrand, siteBrandSubtitle } from './siteNavigation'
 
-const FIRST_CALL_LINK = 'https://wix.to/KbiKGAZ'
-const BOOTCAMP_LINK = 'https://wix.to/XWU7j2L'
+const FIRST_CALL_LINK = 'https://wa.me/41768127782?text=Hallo%20Paul%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren.'
+const BOOTCAMP_LINK = 'https://wa.me/41768127782?text=Hallo%20Paul%2C%20ich%20interessiere%20mich%20f%C3%BCr%20das%20Bootcamp.'
 
 const services = [
   {
