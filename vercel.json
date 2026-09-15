@@ -6,11 +6,16 @@
     { "source": "/impressum.html", "destination": "/pages/impressum.html" },
     { "source": "/agb.html", "destination": "/pages/agb.html" },
     { "source": "/themen.html", "destination": "/pages/themen.html" },
+    { "source": "/vision.html", "destination": "/pages/vision.html" },
+    { "source": "/events/kingdom-men-bible-study", "destination": "/pages/events-kingdom-men-bible-study.html" },
     { "source": "/services", "destination": "/pages/angebote.html" },
+    { "source": "/angebote", "destination": "/pages/angebote.html" },
     { "source": "/shop", "destination": "/pages/shop.html" },
     { "source": "/datenschutz", "destination": "/pages/datenschutz.html" },
     { "source": "/impressum", "destination": "/pages/impressum.html" },
     { "source": "/agb", "destination": "/pages/agb.html" },
-    { "source": "/themen", "destination": "/pages/themen.html" }
+    { "source": "/themen", "destination": "/pages/themen.html" },
+    { "source": "/ministry", "destination": "/pages/themen.html" },
+    { "source": "/vision", "destination": "/pages/vision.html" }
   ]
 }

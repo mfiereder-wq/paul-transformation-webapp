@@ -1,0 +1,19 @@
+Hallo Paul
+
+kurzes Update zu den Änderungen auf der PCT-Website:
+
+- Neues PCT-Transformations-Banner auf der Angebotsseite ergänzt und mit der Fundrazr-Kampagne verlinkt.
+- Angebotsseite neu strukturiert: Body Transformation, Personal Training und Fit for Christ Bootcamp als Hauptangebote ausführlich präsentiert.
+- Das separate Erstgespräch-Angebot entfernt.
+- Personal Training und Bootcamp führen direkt zur Terminberatung im Calendly-Kalender.
+- Den ausführlichen Body-Transformation-Bereich beibehalten.
+- Neue Sektion „Warum PCT?“ ergänzt – mit Fitnessstudio-vs.-PCT-Vergleich, Begleitung, Struktur, Verantwortung, PCT-Unterschied, Community und dem PCT-Effekt.
+- „Mehr als Fitness“ sowie die sechs PCT-Schwerpunkte ergänzt: Personal Coaching, Fitness, Nutrition, Mindset, Accountability und Community.
+- Neue „Meine Geschichte“-Sektion über Paul auf der Startseite ergänzt – inklusive Foto, Transformationsreise seit 2014, Begleitung von rund 400 Menschen seit 2017 sowie der Bedeutung des Glaubens an Jesus Christus.
+- PCT-Banner und Paul-Sektion responsiv für Desktop und Mobile umgesetzt.
+- Build und Tests erfolgreich geprüft: 3 Tests bestanden.
+- Alles erfolgreich auf Vercel deployed und live unter:
+  https://www.pctransformation.ch
+
+Freundliche Grüsse
+Marco

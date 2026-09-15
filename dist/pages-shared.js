@@ -22,6 +22,56 @@ document.addEventListener('DOMContentLoaded', () => {
     button.setAttribute('aria-expanded', String(button.getAttribute('aria-expanded') !== 'true'));
   }));
 
+  // Program cover carousels
+  document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+    const dots = Array.from(carousel.querySelectorAll('[data-carousel-dot]'));
+    const counter = carousel.querySelector('[data-carousel-counter]');
+    const previous = carousel.querySelector('[data-carousel-prev]');
+    const next = carousel.querySelector('[data-carousel-next]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let current = Math.max(0, slides.findIndex((slide) => slide.classList.contains('is-active')));
+    let timer;
+
+    const showSlide = (index) => {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        const active = slideIndex === current;
+        slide.classList.toggle('is-active', active);
+        slide.setAttribute('aria-hidden', String(!active));
+      });
+      dots.forEach((dot, dotIndex) => {
+        dot.setAttribute('aria-current', String(dotIndex === current));
+      });
+      if (counter) counter.textContent = `0${current + 1} / 0${slides.length}`;
+    };
+    const stopAutoPlay = () => {
+      if (timer) window.clearInterval(timer);
+      timer = undefined;
+    };
+    const startAutoPlay = () => {
+      if (reducedMotion || slides.length < 2) return;
+      stopAutoPlay();
+      timer = window.setInterval(() => showSlide(current + 1), 6500);
+    };
+
+    previous?.addEventListener('click', () => { showSlide(current - 1); startAutoPlay(); });
+    next?.addEventListener('click', () => { showSlide(current + 1); startAutoPlay(); });
+    dots.forEach((dot, index) => dot.addEventListener('click', () => { showSlide(index); startAutoPlay(); }));
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+    carousel.addEventListener('focusin', stopAutoPlay);
+    carousel.addEventListener('focusout', (event) => {
+      if (!carousel.contains(event.relatedTarget)) startAutoPlay();
+    });
+    carousel.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') { event.preventDefault(); showSlide(current - 1); startAutoPlay(); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); showSlide(current + 1); startAutoPlay(); }
+    });
+    showSlide(current);
+    startAutoPlay();
+  });
+
   // Scroll-reveal animations
   const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealItems = document.querySelectorAll('.scroll-reveal, .scroll-stagger');
