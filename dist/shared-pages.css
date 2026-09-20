@@ -230,9 +230,9 @@ main{display:block}
 .pct-comparison-grid .comparison-card p{color:var(--muted);line-height:1.6}
 .pct-difference-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:24px}
 .pct-difference-grid .effect-card{height:100%}
-.pct-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
-.pct-pillars span{display:block;padding:14px;background:var(--paper-soft);color:var(--muted);font-size:13px;line-height:1.45}
-.pct-pillars strong{display:block;margin-bottom:6px;color:var(--red);font:700 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.pct-pillars{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px}
+.pct-pillars span{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:16px 18px;background:var(--paper-soft);color:var(--muted);font-size:14px;line-height:1.55}
+.pct-pillars strong{color:var(--red);font:700 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
 .pct-mantra{margin-top:22px!important;color:var(--red)!important;font:italic 22px/1.2 Georgia,serif}
 .pct-effect-strip{margin-top:24px;border-radius:0}
 .pct-effect-intro{margin-bottom:22px!important}
