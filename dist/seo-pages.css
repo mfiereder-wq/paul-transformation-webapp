@@ -1,0 +1,49 @@
+/* SEO landing pages */
+.seo-page { background: var(--paper); color: #211d1a; }
+.seo-hero { padding: 150px 0 88px; color: var(--cream); background: radial-gradient(circle at 78% 18%, rgba(111,44,38,.45), transparent 32%), var(--ink); }
+.seo-hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: clamp(36px, 7vw, 110px); align-items: end; }
+.seo-hero h1 { max-width: 920px; margin: 18px 0 24px; color: var(--cream); font: 800 clamp(48px, 7vw, 94px)/.9 'Barlow Condensed', sans-serif; letter-spacing: -.035em; text-transform: uppercase; }
+.seo-hero h1 em { color: var(--gold); font-style: normal; }
+.seo-hero .lede { max-width: 680px; margin: 0; color: #d8d0c3; font-size: clamp(17px, 2vw, 21px); line-height: 1.55; }
+.seo-hero-card { padding: 28px; border: 1px solid rgba(217,194,140,.45); background: rgba(255,255,255,.06); }
+.seo-hero-card strong { display: block; margin-bottom: 10px; color: var(--gold); font: 700 12px 'IBM Plex Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
+.seo-hero-card p { margin: 0; color: #e8dfd4; line-height: 1.6; }
+.seo-hero-card .btn { margin-top: 24px; }
+.seo-section { padding: 88px 0; }
+.seo-section.alt { background: #fffdf8; }
+.seo-intro { display: grid; grid-template-columns: minmax(230px, .7fr) minmax(0, 1.3fr); gap: clamp(28px, 7vw, 110px); align-items: start; }
+.seo-intro h2, .seo-section h2 { margin: 0 0 18px; color: #4d0e14; font: 800 clamp(38px, 5vw, 70px)/.92 'Barlow Condensed', sans-serif; letter-spacing: -.025em; text-transform: uppercase; }
+.seo-intro h2 em, .seo-section h2 em { color: var(--red); font-style: normal; }
+.seo-copy { max-width: 740px; color: var(--muted); font-size: 17px; line-height: 1.7; }
+.seo-copy p { margin: 0 0 18px; }
+.seo-copy p:last-child { margin-bottom: 0; }
+.seo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 42px; }
+.seo-card { padding: 28px; border: 1px solid rgba(33,29,26,.14); background: #f8f3ea; box-shadow: 6px 6px 0 rgba(217,194,140,.45); }
+.seo-card .number { color: var(--red); font: 700 11px 'IBM Plex Mono', monospace; letter-spacing: .12em; }
+.seo-card h3 { margin: 18px 0 10px; color: #4d0e14; font: 700 27px/.98 'Barlow Condensed', sans-serif; letter-spacing: -.01em; text-transform: uppercase; }
+.seo-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.seo-steps { counter-reset: step; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 38px; }
+.seo-step { position: relative; padding: 24px 20px 22px; border-top: 2px solid var(--gold); background: #f2efe7; }
+.seo-step::before { counter-increment: step; content: '0' counter(step); color: var(--red); font: 700 11px 'IBM Plex Mono', monospace; }
+.seo-step h3 { margin: 18px 0 8px; color: #4d0e14; font: 700 23px/1 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.seo-step p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.seo-offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
+.seo-offer { display: flex; flex-direction: column; padding: 26px; border: 1px solid rgba(33,29,26,.16); background: #fff; }
+.seo-offer h3 { margin: 12px 0 8px; color: #4d0e14; font: 700 30px/.95 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.seo-offer p { margin: 0 0 18px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.seo-offer .btn { margin-top: auto; }
+.seo-faq { display: grid; gap: 1px; margin-top: 34px; background: rgba(33,29,26,.16); }
+.seo-faq details { padding: 22px 24px; background: #fffdf8; }
+.seo-faq summary { cursor: pointer; color: #4d0e14; font: 700 20px/1.2 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.seo-faq p { max-width: 760px; margin: 14px 0 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
+.seo-location { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .72fr); gap: 36px; align-items: center; }
+.seo-address { padding: 28px; border-left: 3px solid var(--gold); background: #f2efe7; color: var(--muted); line-height: 1.7; }
+.seo-address strong { display: block; margin-bottom: 8px; color: #4d0e14; font: 700 12px 'IBM Plex Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
+.seo-cta { padding: 82px 0; color: var(--cream); background: var(--ink); }
+.seo-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.seo-cta h2 { max-width: 700px; margin: 0; color: var(--cream); }
+.seo-cta p { max-width: 520px; margin: 14px 0 0; color: #d8d0c3; }
+.seo-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.seo-links a { color: var(--red); font-weight: 700; }
+@media (max-width: 900px) { .seo-hero-grid, .seo-intro, .seo-location { grid-template-columns: 1fr; }.seo-grid, .seo-offers { grid-template-columns: 1fr; }.seo-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }.seo-hero-card { max-width: 620px; } }
+@media (max-width: 620px) { .seo-hero { padding: 120px 0 64px; }.seo-section, .seo-cta { padding: 64px 0; }.seo-hero h1 { font-size: clamp(46px, 14vw, 68px); }.seo-steps { grid-template-columns: 1fr; }.seo-card, .seo-offer { padding: 22px; }.seo-faq details { padding: 18px; }.seo-faq summary { font-size: 18px; } }

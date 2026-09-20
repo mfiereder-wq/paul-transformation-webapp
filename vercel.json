@@ -16,6 +16,9 @@
     { "source": "/agb", "destination": "/pages/agb.html" },
     { "source": "/themen", "destination": "/pages/themen.html" },
     { "source": "/ministry", "destination": "/pages/themen.html" },
-    { "source": "/vision", "destination": "/pages/vision.html" }
+    { "source": "/vision", "destination": "/pages/vision.html" },
+    { "source": "/personal-training-mellingen-baden", "destination": "/pages/personal-training-mellingen-baden.html" },
+    { "source": "/online-fitness-coaching-schweiz", "destination": "/pages/online-fitness-coaching-schweiz.html" },
+    { "source": "/bt8-8-wochen-transformation-challenge-schweiz", "destination": "/pages/bt8-8-wochen-transformation-challenge-schweiz.html" }
   ]
 }
