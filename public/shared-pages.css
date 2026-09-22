@@ -197,7 +197,7 @@ main{display:block}
 .pricing-list{display:flex;flex:1;flex-direction:column;gap:10px;margin:22px 0 28px;padding:0;list-style:none;color:#4f4741;font-size:14px}
 .pricing-list li{position:relative;padding-left:20px}
 .pricing-list li::before{content:'+';position:absolute;left:0;color:var(--red);font:700 15px 'IBM Plex Mono',monospace}
-.pricing-card .btn{margin-top:auto}.pricing-card .payhip-purchase{display:flex;flex-direction:column;gap:12px;margin-top:auto}.pricing-card .payhip-embed-page{width:100%;min-height:48px;overflow:visible}.pricing-card .payhip-embed-page iframe{max-width:100%;border:0}.payhip-direct-link{justify-content:center;width:100%;margin-top:0!important;text-align:center}.pricing-note{margin:28px 0 0;color:var(--muted);font:600 12px 'IBM Plex Mono',monospace;text-align:center}
+.pricing-card .btn{margin-top:auto}.pricing-card .payhip-purchase{display:flex;flex-direction:column;gap:12px;margin-top:auto}.payhip-direct-link{justify-content:center;width:100%;margin-top:0!important;text-align:center}.pricing-note{margin:28px 0 0;color:var(--muted);font:600 12px 'IBM Plex Mono',monospace;text-align:center}
   .pricing-section-prominent .pricing-note{color:#c5cbc7}
   .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:54px;background:rgba(217,194,140,.34);border:1px solid rgba(217,194,140,.34)}
   .trust-grid article{min-height:150px;padding:24px;background:#141b26}
