@@ -61,26 +61,20 @@ const heroSlides = [
 
 const programSlides = [
   {
-    label: '1:1 Coaching',
-    eyebrow: '01 / Persönliche Betreuung',
-    description: 'Individuelle Begleitung, klare Strategie und persönliche Unterstützung auf deinem Weg.',
-    image: 'https://res.cloudinary.com/dtzpydtdg/image/upload/v1789409868/pct_11_coaching_cover_paul_christian_clean_dz0mdy.png',
-  },
-  {
     label: 'BT4 Neustart',
-    eyebrow: '02 / Der smarte Einstieg',
+    eyebrow: '01 / Der smarte Einstieg',
     description: 'Vier Wochen Struktur für Selbststarter, die ihre gesunden Routinen neu aufbauen möchten.',
     image: 'https://res.cloudinary.com/dtzpydtdg/image/upload/v1789409865/pct_bt4_neustart_cover_paul_christian_clean_jsfqpu.png',
   },
   {
     label: 'VIP Personal Coaching',
-    eyebrow: '03 / Maximale Unterstützung',
+    eyebrow: '02 / Maximale Unterstützung',
     description: 'Intensive 1:1-Betreuung mit persönlichem Trainings- und Ernährungsplan.',
     image: 'https://res.cloudinary.com/dtzpydtdg/image/upload/v1789409862/pct_vip_personal_coaching_cover_paul_christian_clean_au6sph.png',
   },
   {
     label: 'BT8 Transformation',
-    eyebrow: '04 / Das Flagship-Programm',
+    eyebrow: '03 / Das Flagship-Programm',
     description: 'Die ganzheitliche 8-Wochen-Transformation mit Coaching, Live-Calls und Community.',
     image: 'https://res.cloudinary.com/dtzpydtdg/image/upload/v1789409862/pct_vip_personal_coaching_cover_paul_christian_clean_au6sph.png',
   },
