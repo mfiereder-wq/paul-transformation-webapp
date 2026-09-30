@@ -11,7 +11,7 @@
   <body>
     <div id="root"></div>
     <!-- Kompaktes Google Review Floating Widget -->
-    <div id="gr-floating-widget" style="position:fixed;bottom:24px;right:24px;z-index:99999;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+    <div id="gr-floating-widget" hidden style="position:fixed;bottom:24px;right:24px;z-index:40;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
       <a href="https://share.google/DgBU5BrzZ7CG42jEo" target="_blank" rel="noopener noreferrer" aria-label="5.0 Sterne und 4 Google Bewertungen ansehen" style="display:flex;align-items:center;gap:12px;background:#fff;color:#1f2937;padding:10px 16px;border-radius:9999px;text-decoration:none;box-shadow:0 10px 25px -5px rgba(0,0,0,.15),0 4px 10px -2px rgba(0,0,0,.05);border:1px solid #e5e7eb;transition:transform .2s ease,box-shadow .2s ease">
         <svg style="width:24px;height:24px;flex-shrink:0" viewBox="0 0 24 24" aria-hidden="true">
           <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -26,5 +26,20 @@
       </a>
     </div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Google Review Widget erst nach Cookie-Einwilligung anzeigen -->
+    <script>
+      (function () {
+        var widget = document.getElementById('gr-floating-widget');
+        if (!widget) return;
+        var showIfConsented = function () {
+          if (localStorage.getItem('pct-cookie-consent')) {
+            widget.hidden = false;
+            window.clearInterval(poll);
+          }
+        };
+        var poll = window.setInterval(showIfConsented, 800);
+        showIfConsented();
+      })();
+    </script>
   </body>
 </html>
