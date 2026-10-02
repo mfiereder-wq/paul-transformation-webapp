@@ -69,8 +69,8 @@ const programSlides = [
   {
     label: 'VIP Personal Coaching',
     eyebrow: '02 / Maximale Unterstützung',
-    description: 'Intensive 1:1-Betreuung mit persönlichem Trainings- und Ernährungsplan.',
-    image: 'https://res.cloudinary.com/dtzpydtdg/image/upload/v1789409862/pct_vip_personal_coaching_cover_paul_christian_clean_au6sph.png',
+    description: 'Für den Mann in Führungsposition, der mehr Energie, Gesundheit und Leistungsfähigkeit für seinen Lebensstil und seine Berufung will.',
+    image: 'https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1k3un1ulu1spe566p5213vvudp15.png',
   },
   {
     label: 'BT8 Transformation',
