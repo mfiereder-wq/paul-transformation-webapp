@@ -76,7 +76,7 @@ const programSlides = [
     label: 'BT8 Transformation',
     eyebrow: '03 / Das Flagship-Programm',
     description: 'Die ganzheitliche 8-Wochen-Transformation mit Coaching, Live-Calls und Community.',
-    image: 'https://res.cloudinary.com/dtzpydtdg/image/upload/v1789409862/pct_vip_personal_coaching_cover_paul_christian_clean_au6sph.png',
+    image: 'https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1k3un71dqit3dti6m71rph7ih17.jpeg',
   },
 ]
 
