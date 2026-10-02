@@ -64,7 +64,7 @@ const programSlides = [
     label: 'BT4 Neustart',
     eyebrow: '01 / Der smarte Einstieg',
     description: 'Vier Wochen Struktur für Selbststarter, die ihre gesunden Routinen neu aufbauen möchten.',
-    image: 'https://res.cloudinary.com/dtzpydtdg/image/upload/v1789409865/pct_bt4_neustart_cover_paul_christian_clean_jsfqpu.png',
+    image: 'https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1k3un3jlj1re11tpkp9blj1dv115.png',
   },
   {
     label: 'VIP Personal Coaching',
