@@ -242,6 +242,10 @@ main { overflow: clip; }
 .google-review-text { margin: 24px 0 0; color: #594e47; font-size: 15px; line-height: 1.6; }
 .google-owner-reply { display: grid; gap: 4px; margin: 20px 0 0; padding: 12px 14px; border-left: 2px solid var(--gold); color: var(--muted); font-size: 13px; line-height: 1.5; background: #f2eee6; }
 .google-owner-reply strong { color: var(--wine); font: 700 9px 'DM Mono', monospace; letter-spacing: .06em; text-transform: uppercase; }
+a.google-owner-reply, a.google-rating { text-decoration: none; cursor: pointer; }
+a.google-owner-reply { transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+a.google-owner-reply:hover { background: #ece7dd; border-left-color: var(--red); transform: translateX(3px); }
+a.google-owner-reply:focus-visible, a.google-rating:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
 
 .homepage-program-carousel { width: 100%; min-width: 0; margin: 0 auto 58px; padding: 18px; border: 1px solid rgba(34,27,26,.2); background: #100d0b; box-shadow: 10px 10px 0 rgba(216,189,127,.72); outline: none; }
 .homepage-program-carousel:focus-visible { outline: 2px solid var(--wine); outline-offset: 4px; }

@@ -5,11 +5,12 @@ import {
   ArrowUpRight,
   CircleCheck,
   CalendarDays,
-  ChevronDown,
   Menu,
   MoveRight,
+  Star,
   X,
 } from 'lucide-react'
+import ScrollVideoHero from './ScrollVideoHero'
 import './mobile.css'
 import './challenge.css'
 import './motion.css'
@@ -20,6 +21,8 @@ const BOOKING_EMBED_LINK = `${BOOKING_LINK}?hide_gdpr_banner=1`
 const PAYPAL_LINK = 'https://paypal.me/paulchristian7'
 const FUNDRAZR_LINK = 'https://fundrazr.com/42mpe9?ref=sh_0EzmUa_ab_AOWhbf9fuIJAOWhbf9fuIJ'
 const LINKTREE_LINK = 'https://linktr.ee/paulchristiantransformation?utm_source=linktree_profile_share&ltsid=dd17141b-6f0c-455a-922b-655590112653'
+const GOOGLE_REVIEW_LINK = 'https://share.google/DgBU5BrzZ7CG42jEo'
+const starRow = (size = 15) => [0, 1, 2, 3, 4].map((star) => <Star key={star} size={size} fill="currentColor" strokeWidth={0} aria-hidden="true" />)
 const CONTACT_EMAIL = 'welcome@pctransformation.ch'
 
 const services = [
@@ -53,12 +56,6 @@ const services = [
   },
 ]
 
-const heroSlides = [
-  { label: 'Personal Training', image: '/assets/paul-scroll-frame-02-desktop.webp', video: 'https://res.cloudinary.com/dtzpydtdg/video/upload/v1789407646/Trainer_coaching_client_in_gym_20260914193806_gavgg6.webm' },
-  { label: 'Ernährung', image: '/assets/nutrition-prep.jpg' },
-  { label: 'Mindset & Fokus', image: 'https://res.cloudinary.com/dtzpydtdg/image/upload/v1789114354/Gemini_Generated_Image_3xiefh3xiefh3xie_wmh3f9.jpg' },
-]
-
 const programSlides = [
   {
     label: 'BT4 Neustart',
@@ -84,10 +81,6 @@ const programSlides = [
 function buildMailto(subject: string, rows: Array<[string, string]>) {
   const body = rows.map(([label, value]) => `${label}: ${value || '—'}`).join('\n')
   return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-}
-
-function scrollToId(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
 function ProgramCarousel() {
@@ -127,19 +120,12 @@ function ProgramCarousel() {
 function App() {
   const reduceMotion = useReducedMotion()
   const [menuOpen, setMenuOpen] = useState(false)
-  const [heroSlide, setHeroSlide] = useState(0)
   const [contactSent, setContactSent] = useState(false)
   const [cookieVisible, setCookieVisible] = useState(false)
 
   useEffect(() => {
     if (!localStorage.getItem('pct-cookie-consent')) setCookieVisible(true)
   }, [])
-
-  useEffect(() => {
-    if (reduceMotion) return
-    const timer = window.setInterval(() => setHeroSlide((slide) => (slide + 1) % heroSlides.length), 6500)
-    return () => window.clearInterval(timer)
-  }, [reduceMotion])
 
   const reveal = (distance = 34, delay = 0) => ({
     initial: { opacity: 0, y: reduceMotion ? 0 : distance },
@@ -182,25 +168,46 @@ function App() {
         </button>
       </header>
 
-      <section id="top" className="hero-section" aria-label="PCT Einstieg">
-        <div className="hero-media" aria-hidden="true">
-          {heroSlides.map((slide, index) => slide.video ? <video key={slide.label} className={`hero-slide-image${index === heroSlide ? ' is-active' : ''}`} src={slide.video} poster={slide.image} autoPlay={!reduceMotion} muted loop playsInline preload="metadata" aria-hidden="true" /> : <img key={slide.label} className={`hero-slide-image${index === heroSlide ? ' is-active' : ''}`} src={slide.image} alt="" loading="lazy" decoding="async" />)}
-          <div className="hero-grid" />
-          <div className="hero-vignette" />
-        </div>
-        <motion.div className="hero-content" initial={{ opacity: 0, y: reduceMotion ? 0 : 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reduceMotion ? 0 : .65, ease: [0.22, 1, 0.36, 1] }}>
-          <p className="hero-slide-label">{heroSlides[heroSlide].label}</p>
-          <h1>ERREICHE DEINE<br />BESTE GESUNDHEIT<br /><em>UND ERLEBE DEIN<br />BESTES SELBST!</em></h1>
-          <p className="hero-lead">Mit ganzheitlichem Transformations-Coaching – zu mehr Gesundheit, Motivation, Energie und Balance im Leben.</p>
-          <div className="hero-actions">
-            <a className="button button-primary" href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">Erstgespräch buchen <MoveRight size={18} /></a>
-            <a className="button button-ghost" href="#angebote">Angebote entdecken</a>
+      <ScrollVideoHero bookingLink={BOOKING_LINK} />
+
+      <section id="google-bewertungen" className="google-reviews-section section-shell" aria-labelledby="google-reviews-title">
+        <motion.div className="google-reviews-heading" {...reveal(30)}>
+          <p className="eyebrow"><span /> Stimmen bei Google</p>
+          <div>
+            <h2 id="google-reviews-title">WAS KUNDEN<br /><em>SAGEN.</em></h2>
+            <a className="google-rating" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer">
+              <span className="google-stars">{starRow(17)}</span>
+              <strong>5.0</strong>
+              <span>4 Google Bewertungen</span>
+            </a>
           </div>
-          <div className="hero-slide-controls" aria-label="PCT-Bereiche auswählen">
-            {heroSlides.map((slide, index) => <button key={slide.label} type="button" className={index === heroSlide ? 'is-active' : ''} onClick={() => setHeroSlide(index)} aria-label={`${slide.label} anzeigen`} aria-pressed={index === heroSlide}><span>0{index + 1}</span>{slide.label}</button>)}
-          </div>
+          <p>Paul Transformation wird bei Google mit 5,0 von 5 Sternen bewertet – auf Basis von 4 veröffentlichten Rückmeldungen. Alle Bewertungen sind unverändert direkt bei Google nachlesbar.</p>
+          <a className="button button-primary" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer">Bewertungen bei Google ansehen <ArrowUpRight size={18} /></a>
         </motion.div>
-        <button className="scroll-cue" type="button" onClick={() => scrollToId('angebote')}>SCROLL TO START <ChevronDown size={17} /></button>
+        <div className="google-review-grid">
+          <motion.div className="google-review-card" {...reveal(30)}>
+            <div className="google-review-card-top">
+              <div>
+                <h3>5,0 von 5 Sternen</h3>
+                <p>4 Google Bewertungen · Paul Christian Transformation</p>
+              </div>
+              <span className="google-review-stars">{starRow(16)}</span>
+            </div>
+            <p className="google-review-text">Die Gesamtbewertung bei Google basiert auf allen veröffentlichten Rückmeldungen von Kundinnen und Kunden – jede einzelne mit der Höchstpunktzahl.</p>
+            <a className="google-owner-reply" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer"><strong>Bewertungen ansehen</strong><span>Alle 4 Rückmeldungen direkt im Google-Profil öffnen.</span></a>
+          </motion.div>
+          <motion.div className="google-review-card" {...reveal(30, .08)}>
+            <div className="google-review-card-top">
+              <div>
+                <h3>Deine Erfahrung zählt</h3>
+                <p>Feedback aus dem PCT Umfeld</p>
+              </div>
+              <span className="google-review-stars">{starRow(16)}</span>
+            </div>
+            <p className="google-review-text">Kennst du PCT bereits? Hinterlasse deine eigene Bewertung bei Google – sie hilft anderen dabei, den passenden Einstieg zu finden.</p>
+            <a className="google-owner-reply" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer"><strong>Bewertung schreiben</strong><span>Deine Rückmeldung bei Google hinterlassen.</span></a>
+          </motion.div>
+        </div>
       </section>
 
       <section id="angebote" className="services-section section-shell" aria-labelledby="services-title">
