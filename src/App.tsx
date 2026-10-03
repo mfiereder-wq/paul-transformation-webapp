@@ -23,6 +23,35 @@ const FUNDRAZR_LINK = 'https://fundrazr.com/42mpe9?ref=sh_0EzmUa_ab_AOWhbf9fuIJA
 const LINKTREE_LINK = 'https://linktr.ee/paulchristiantransformation?utm_source=linktree_profile_share&ltsid=dd17141b-6f0c-455a-922b-655590112653'
 const GOOGLE_REVIEW_LINK = 'https://share.google/DgBU5BrzZ7CG42jEo'
 const starRow = (size = 15) => [0, 1, 2, 3, 4].map((star) => <Star key={star} size={size} fill="currentColor" strokeWidth={0} aria-hidden="true" />)
+
+// Echte Google-Bewertungen (unverändert übernommen, inkl. Antworten des Inhabers)
+const googleReviews: { name: string; meta: string; text: string[]; reply?: string }[] = [
+  {
+    name: 'Elena Fontana',
+    meta: 'Local Guide · 18 Rezensionen · 3 Fotos · vor 9 Monaten',
+    text: ['Paul Christian is very professional, competent and helpful. He helped me with a personalised training plan tailored to my needs. I am very satisfied with his advice.'],
+  },
+  {
+    name: 'Ivan',
+    meta: '3 Rezensionen · vor 9 Monaten',
+    text: ['Sehr professionel, nimmt sich Zeit, sehr hilfreich seine feedback'],
+  },
+  {
+    name: 'Giorgos Neopoulos',
+    meta: '3 Rezensionen · vor 10 Monaten',
+    text: ['Sehr professionell und hilfreich.'],
+    reply: 'Hallo Giorgos, besten Dank für dein Feedback :).',
+  },
+  {
+    name: '- Leonepebone',
+    meta: '6 Rezensionen · 1 Foto · vor 10 Monaten',
+    text: [
+      'Super Trainer! Sehr kompetent in Ernährung und Fitness. Hat mir echt geholfen, Fortschritte zu machen!',
+      'Dabei geht er auf meine Bedürfnisse ein und nimmt sich Zeit zum Zuhören.',
+    ],
+    reply: 'Hallo Leon, besten Dank für dein Feedback :).',
+  },
+]
 const CONTACT_EMAIL = 'welcome@pctransformation.ch'
 
 const services = [
@@ -170,46 +199,6 @@ function App() {
 
       <ScrollVideoHero bookingLink={BOOKING_LINK} />
 
-      <section id="google-bewertungen" className="google-reviews-section section-shell" aria-labelledby="google-reviews-title">
-        <motion.div className="google-reviews-heading" {...reveal(30)}>
-          <p className="eyebrow"><span /> Stimmen bei Google</p>
-          <div>
-            <h2 id="google-reviews-title">WAS KUNDEN<br /><em>SAGEN.</em></h2>
-            <a className="google-rating" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer">
-              <span className="google-stars">{starRow(17)}</span>
-              <strong>5.0</strong>
-              <span>4 Google Bewertungen</span>
-            </a>
-          </div>
-          <p>Paul Transformation wird bei Google mit 5,0 von 5 Sternen bewertet – auf Basis von 4 veröffentlichten Rückmeldungen. Alle Bewertungen sind unverändert direkt bei Google nachlesbar.</p>
-          <a className="button button-primary" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer">Bewertungen bei Google ansehen <ArrowUpRight size={18} /></a>
-        </motion.div>
-        <div className="google-review-grid">
-          <motion.div className="google-review-card" {...reveal(30)}>
-            <div className="google-review-card-top">
-              <div>
-                <h3>5,0 von 5 Sternen</h3>
-                <p>4 Google Bewertungen · Paul Christian Transformation</p>
-              </div>
-              <span className="google-review-stars">{starRow(16)}</span>
-            </div>
-            <p className="google-review-text">Die Gesamtbewertung bei Google basiert auf allen veröffentlichten Rückmeldungen von Kundinnen und Kunden – jede einzelne mit der Höchstpunktzahl.</p>
-            <a className="google-owner-reply" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer"><strong>Bewertungen ansehen</strong><span>Alle 4 Rückmeldungen direkt im Google-Profil öffnen.</span></a>
-          </motion.div>
-          <motion.div className="google-review-card" {...reveal(30, .08)}>
-            <div className="google-review-card-top">
-              <div>
-                <h3>Deine Erfahrung zählt</h3>
-                <p>Feedback aus dem PCT Umfeld</p>
-              </div>
-              <span className="google-review-stars">{starRow(16)}</span>
-            </div>
-            <p className="google-review-text">Kennst du PCT bereits? Hinterlasse deine eigene Bewertung bei Google – sie hilft anderen dabei, den passenden Einstieg zu finden.</p>
-            <a className="google-owner-reply" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer"><strong>Bewertung schreiben</strong><span>Deine Rückmeldung bei Google hinterlassen.</span></a>
-          </motion.div>
-        </div>
-      </section>
-
       <section id="angebote" className="services-section section-shell" aria-labelledby="services-title">
         <motion.div className="services-heading services-heading-centered" {...reveal(28)}>
           <p className="eyebrow"><span /> 01 / Angebote</p>
@@ -217,6 +206,46 @@ function App() {
           <p>Alles auf einen Blick: Wähle den Einstieg, der zu deinem Ziel passt. Jede Buchung beginnt mit Klarheit und endet mit einem Plan, den du im echten Leben umsetzen kannst.</p>
         </motion.div>
         <motion.div {...reveal(30)}><ProgramCarousel /></motion.div>
+
+        <section id="google-bewertungen" className="google-reviews-section" aria-labelledby="google-reviews-title">
+          <motion.div className="google-reviews-heading" {...reveal(30)}>
+            <p className="eyebrow"><span /> Stimmen bei Google</p>
+            <div>
+              <h2 id="google-reviews-title">WAS KUNDEN<br /><em>SAGEN.</em></h2>
+              <a className="google-rating" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer">
+                <span className="google-stars">{starRow(17)}</span>
+                <strong>5.0</strong>
+                <span>4 Google Bewertungen</span>
+              </a>
+            </div>
+            <p>Das sind die echten Rückmeldungen aus dem Google-Profil:4 Bewertungen, jede mit 5,0 von 5 Sternen – inklusive der Antworten von Paul Christian Transformation.</p>
+            <a className="button button-primary" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer">Bewertungen bei Google ansehen <ArrowUpRight size={18} /></a>
+          </motion.div>
+          <div className="google-review-grid">
+            {googleReviews.map((review, index) => (
+              <motion.div className="google-review-card" key={review.name} {...reveal(30, index * .08)}>
+                <div className="google-review-card-top">
+                  <div>
+                    <h3>{review.name}</h3>
+                    <p>{review.meta}</p>
+                  </div>
+                  <span className="google-review-stars" role="img" aria-label="5 von 5 Sternen">{starRow(16)}</span>
+                </div>
+                <p className="google-review-text">
+                  {review.text.map((paragraph, position) => (
+                    <span key={paragraph}>{position > 0 ? <br /> : null}{paragraph}</span>
+                  ))}
+                </p>
+                {review.reply ? (
+                  <div className="google-owner-reply">
+                    <strong>Antwort von Paul Christian Transformation</strong>
+                    <span>{review.reply}</span>
+                  </div>
+                ) : null}
+              </motion.div>
+            ))}
+          </div>
+        </section>
         <div className="services-grid services-grid-four">{services.map((service, index) => <motion.a className="service-card" href={service.href} key={service.title} {...reveal(30, index * .06)} whileHover={reduceMotion ? undefined : { y: -7 }}>
           <div className={`service-image${index < 3 ? ' service-image-focus-top' : ''}`}><img src={service.image} alt="" loading="lazy" decoding="async" /></div>
           <div className="service-card-content"><span className="service-number">0{index + 1}</span><h3>{service.title}</h3><p className="service-lead">{service.lead}</p><p className="service-description">{service.description}</p><span className="service-link">Mehr erfahren <ArrowUpRight size={16} /></span></div>
