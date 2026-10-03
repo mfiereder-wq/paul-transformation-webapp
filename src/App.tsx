@@ -218,7 +218,6 @@ function App() {
                 <span>4 Google Bewertungen</span>
               </a>
             </div>
-            <p>Das sind die echten Rückmeldungen aus dem Google-Profil: 4 Bewertungen, jede mit 5,0 von 5 Sternen – inklusive der Antworten von Paul Christian Transformation.</p>
             <a className="button button-primary" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer">Bewertungen bei Google ansehen <ArrowUpRight size={18} /></a>
           </motion.div>
           <div className="google-review-grid">
