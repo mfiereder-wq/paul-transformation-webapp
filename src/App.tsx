@@ -24,7 +24,7 @@ const LINKTREE_LINK = 'https://linktr.ee/paulchristiantransformation?utm_source=
 const GOOGLE_REVIEW_LINK = 'https://share.google/DgBU5BrzZ7CG42jEo'
 const starRow = (size = 15) => [0, 1, 2, 3, 4].map((star) => <Star key={star} size={size} fill="currentColor" strokeWidth={0} aria-hidden="true" />)
 
-// Echte Google-Bewertungen (unverändert übernommen, inkl. Antworten des Inhabers)
+// Echte Google-Bewertungen (Rechtschreibung korrigiert, inkl. Antworten des Inhabers)
 const googleReviews: { name: string; meta: string; text: string[]; reply?: string }[] = [
   {
     name: 'Elena Fontana',
@@ -34,7 +34,7 @@ const googleReviews: { name: string; meta: string; text: string[]; reply?: strin
   {
     name: 'Ivan',
     meta: '3 Rezensionen · vor 9 Monaten',
-    text: ['Sehr professionel, nimmt sich Zeit, sehr hilfreich seine feedback'],
+    text: ['Sehr professionell, nimmt sich Zeit, sehr hilfreiches Feedback.'],
   },
   {
     name: 'Giorgos Neopoulos',
@@ -218,7 +218,7 @@ function App() {
                 <span>4 Google Bewertungen</span>
               </a>
             </div>
-            <p>Das sind die echten Rückmeldungen aus dem Google-Profil:4 Bewertungen, jede mit 5,0 von 5 Sternen – inklusive der Antworten von Paul Christian Transformation.</p>
+            <p>Das sind die echten Rückmeldungen aus dem Google-Profil: 4 Bewertungen, jede mit 5,0 von 5 Sternen – inklusive der Antworten von Paul Christian Transformation.</p>
             <a className="button button-primary" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer">Bewertungen bei Google ansehen <ArrowUpRight size={18} /></a>
           </motion.div>
           <div className="google-review-grid">
