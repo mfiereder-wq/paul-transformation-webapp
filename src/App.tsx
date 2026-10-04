@@ -90,19 +90,19 @@ const programSlides = [
     label: 'BT4 Neustart',
     eyebrow: '01 / Der smarte Einstieg',
     description: 'Vier Wochen Struktur für Selbststarter, die ihre gesunden Routinen neu aufbauen möchten.',
-    image: 'https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1k3un3jlj1re11tpkp9blj1dv115.png',
+    image: 'https://res.cloudinary.com/dnrvauviq/image/upload/v1791146507/835128766_1075622842109565_8543607082336899184_n_hwbzch.webp',
   },
   {
     label: 'VIP Personal Coaching',
     eyebrow: '02 / Maximale Unterstützung',
     description: 'Für den Mann in Führungsposition, der mehr Energie, Gesundheit und Leistungsfähigkeit für seinen Lebensstil und seine Berufung will.',
-    image: 'https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1k3un1ulu1spe566p5213vvudp15.png',
+    image: 'https://res.cloudinary.com/dnrvauviq/image/upload/v1791146507/838910554_2382529795923317_1002934697035100182_n_ph2gwk.webp',
   },
   {
     label: 'BT8 Transformation',
     eyebrow: '03 / Das Flagship-Programm',
     description: 'Die ganzheitliche 8-Wochen-Transformation mit Coaching, Live-Calls und Community.',
-    image: 'https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1k3un71dqit3dti6m71rph7ih17.jpeg',
+    image: 'https://res.cloudinary.com/dnrvauviq/image/upload/v1791146507/834335547_1563610701759615_8013967964292406863_n_n68jhn.webp',
   },
 ]
 
